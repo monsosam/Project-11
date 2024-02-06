@@ -1,13 +1,14 @@
 const router = require("express").Router();
-const store = require("../db/store");
+const path = require('path');
 
-// GET "/api/notes" responds with all notes from the database
-router.get("/notes", function(req, res) {
-  store.getNotes().then(notes => res.json(notes)).catch(err => res.status(500).json(err));
+// Serve the notes.html page
+router.get('/notes', function(req, res) {
+  res.sendFile(path.join(__dirname, '../public/notes.html'));
 });
 
-router.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/index.html"));
+// Catch-all route to serve the index.html page
+router.get('*', function(req, res) {
+  res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 module.exports = router;
