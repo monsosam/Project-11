@@ -11,7 +11,8 @@
   "author": "Samuel Monson",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "uuid": "^9.0.1"
   },
   "repository": {
     "type": "git",
