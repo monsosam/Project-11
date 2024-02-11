@@ -1,7 +1,7 @@
-const fs = require('fs').promises;
-const path = require('path');
+import { promises as fs } from 'fs';
+import { join } from 'path';
 
-const filePath = path.join(__dirname, '../db/db.json');
+const filePath = join(__dirname, '../db/db.json');
 
 class Store {
     async getNotes() {
@@ -23,4 +23,4 @@ class Store {
     }
 }
 
-module.exports = new Store();
+export default new Store();

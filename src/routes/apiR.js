@@ -1,12 +1,12 @@
 const router = require("express").Router();
-const Store = require("./store.js"); 
-const { v4: uuidv4 } = require('uuid');
+import Store from "./store.js"; 
+import { v4 as uuidv4 } from 'uuid';
 
 
 
 router.get("/notes", async (req, res) => {
   try {
-      const notes = await store.getNotes();
+      const notes = await Store.getNotes();
       res.json(notes);
   } catch (err) {
       res.status(500).json(err);
@@ -21,7 +21,7 @@ router.post("/notes", async (req, res) => {
       }
       
       const newNote = { title, text, id: uuidv4() };
-      const note = await store.addNote(newNote);
+      const note = await Store.addNote(newNote);
       res.json(note);
   } catch (err) {
       res.status(500).json(err);
@@ -30,11 +30,11 @@ router.post("/notes", async (req, res) => {
 
 router.delete("/notes/:id", async (req, res) => {
   try {
-      await store.removeNote(req.params.id);
+      await Store.removeNote(req.params.id);
       res.json({ ok: true });
   } catch (err) {
       res.status(500).json(err);
   }
 });
   
-module.exports = router;
+export default router;

@@ -1,13 +1,13 @@
-const express = require("express");
+import express from "express";
 
-const apiRoutes = require("./routes/apiR");
-const htmlRoutes = require("./routes/htmlR");
+import apiRoutes from "./routes/apiR";
+import htmlRoutes from "./routes/htmlR";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(json());
+app.use(urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 
