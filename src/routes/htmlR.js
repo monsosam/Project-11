@@ -1,6 +1,11 @@
 import express from 'express';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
 const router = express.Router();
-import { join } from 'path';
+
+// Construct __dirname equivalent in ES module
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // Serve the notes.html page
 router.get('/notes', function(req, res) {
