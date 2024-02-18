@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "type": "module",
   "description": "Your challenge is to create an application called Note Taker that can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file.",
-  "main": "src/server.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/server.js",
+    "start": "node server.js",
     "build": "echo \"No build step required\""
   },
   "author": "Samuel Monson",
