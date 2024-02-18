@@ -2,13 +2,9 @@ const express = require('express')
 const path = require('path')
 const fs = require('fs')
 
-// Constant for note data (initially read from file)
 const { notes } = require('./db/db.json');
 
-// Create an Express application
 const app = express();
-
-// Define the port for the server
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
